@@ -88,7 +88,7 @@ int main() {
 
         // Get device ids.
         std::vector<cl_device_id> devices(devicesCount);
-        OCL_SAFE_CALL(clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL, sizeof(cl_device_id), devices.data(), nullptr));
+        OCL_SAFE_CALL(clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL, sizeof(cl_device_id), devices.data(), &devicesCount));
 
         for (int deviceIndex = 0; deviceIndex < devicesCount; ++deviceIndex) {
             // TODO 2.2
